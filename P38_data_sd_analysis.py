@@ -18,7 +18,7 @@ print ('median of temperature is: ', np.median(temperature))
 
 print ('\n')
 
-sqrt_diff_list=[]
+diff_squre_list=[]
 
 num_items=len(temperature)
 product=1.
@@ -27,18 +27,18 @@ print ('=======method-1 to calculate standard deviation, step by step=======')
 
 for temp in temperature:
     diff=temp-mean_temp
-    sqrt_diff=diff**2
-    sqrt_diff_list.append(sqrt_diff)
-    average_sqrt_diff=np.mean(sqrt_diff_list)
+    diff_squre=diff**2
+    diff_squre_list.append(diff_squre)
+    average_diff_squre=np.mean(diff_squre_list)
     product*=temp
 
-standard_deviation = np.sqrt(average_sqrt_diff)
+standard_deviation = np.sqrt(average_diff_squre)
 geometric_mean = product ** (1./num_items)
 
-print ('Standard Deviation = ',standard_deviation)
+print ('Standard Deviation (bias, /n) = ',standard_deviation)
 
 print ('Geometric Mean = ',geometric_mean)
 
 print ('=======method-2 to calculate standard deviation, using numpy directly =======')
 
-print ('Standard Deviation = ',np.std(temperature))
+print ('Standard Deviation (bias, /n) = ',np.std(temperature))
